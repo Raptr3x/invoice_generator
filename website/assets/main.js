@@ -1,7 +1,9 @@
-$("#login-button").click(function(event){
-    event.preventDefault();
-    $('.hidden').fadeIn(1000);
-    $('form').fadeOut(500);
-    $('.logged-in').addClass('hidden');
-    $('.wrapper').addClass('form-success');
+$('#password, #repassword').on('keyup', function () {
+    if ($('#password').val() != $('#repassword').val()) {
+        $('#pass_nonmatch').html('Passwords must match').addClass('incorrect');
+        $('#register-button').prop( "disabled", true );
+    } else {
+        $('#pass_nonmatch').html('');
+        $('#register-button').prop( "disabled", false);
+    }
 });
