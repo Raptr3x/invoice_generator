@@ -21,30 +21,41 @@ if(isset($_POST['register'])){
 	isset($_POST['newsletter']) ? $newsletter = 1 : $newsletter = 0;
 	
 	// if email is taken, give a warning, not an error!
-	insert($conn, 'users', "email, pswd, fullname, hasNewsletter", "'".$email."', '".$password."', '".$uname."', ".$newsletter);
-?>
+	$row = select_cond($conn, 'users', 'email="'.$email.'"');
+	if(!$row){
+		insert($conn, 'users', "email, pswd, fullname, hasNewsletter", "'".$email."', '".$password."', '".$uname."', ".$newsletter);
+		?>
+			<script type="text/javascript">
+				window.addEventListener('load', function () {
+					$('.welcome').fadeIn(1000);
+					$('form').fadeOut(500);
+					$('.logged-in').addClass('hidden');
+					$('.wrapper').addClass('form-success');
+
+					setTimeout(function() {
+						window.location.href = 'index.php';
+					}, 2000);
+				})
+			</script>
+		<?php
+	}else{
+		?>
 		<script type="text/javascript">
 			window.addEventListener('load', function () {
-				$('.welcome').fadeIn(1000);
-				$('form').fadeOut(500);
-				$('.logged-in').addClass('hidden');
-				$('.wrapper').addClass('form-success');
-
-				setTimeout(function() {
-					window.location.href = 'index.php';
-				}, 2000);
+				$('#display_error').html('E-mail already in use').addClass('incorrect');
 			})
 		</script>
-<?php
+		<?php
+	}
 }
 ?>
 
 <body>
 	<div class="wrapper">
 		<div class="container d-flex justify-content-center flex-column ">
-			<h1 class="logged-in">Create an account</h1>
+			<h1 class="logged-in fw-bolder">Create an account</h1>
 			<h1 class="welcome hidden">Account successfully registered!</h1>
-			<p id="pass_nonmatch"></p>
+			<p id="display_error"></p>
 			<form class="form align-self-center" action="register.php" method="post">
 				<input name="uname" type="name" placeholder="Name" required>
 				<input name="email" type="email" placeholder="E-mail" required>
@@ -59,8 +70,8 @@ if(isset($_POST['register'])){
 				<input name="register" class="display-2" type="submit" id="register-button" value="register"></input>
 			</form>
 
-			<p class="logged-in">Have an account?</p>
-			<a class="logged-in href="index.php">Login here!</a>
+			<p class="logged-in fw-bolder">Have an account?</p>
+			<a class="logged-in fw-bolder" href="index.php">Login here!</a>
 		</div>
 		
 		<ul class="bg-bubbles">

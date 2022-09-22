@@ -55,8 +55,8 @@ if(isset($_POST['login'])){
 <body>
 	<div class="wrapper">
 		<div class="container">
-			<h1 class="logged-in m-2">Login</h1>
-			<h1 class="welcome hidden">Welcome!</h1>
+			<h1 class="logged-in m-2 fw-bolder">Login</h1>
+			<h1 class="welcome hidden fw-bolder">Welcome!</h1>
 
 			<p class="incorrect hidden">Incorrect email/password!</p>
 			<form action="index.php" method="post" class="form">
@@ -69,8 +69,8 @@ if(isset($_POST['login'])){
 				</div> -->
 			</form>
 
-			<p class="logged-in">Don't have an account?</p>
-			<a class="logged-in" href="register.php">Create one now!</a>
+			<p class="logged-in fw-bolder">Don't have an account?</p>
+			<a class="logged-in fw-bolder" href="register.php">Create one now!</a>
 		</div>
 		
 		<ul class="bg-bubbles">

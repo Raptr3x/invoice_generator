@@ -1,9 +1,9 @@
 $('#password, #repassword').on('keyup', function () {
     if ($('#password').val() != $('#repassword').val()) {
-        $('#pass_nonmatch').html('Passwords must match').addClass('incorrect');
+        $('#display_error').html('Passwords must match').addClass('incorrect');
         $('#register-button').prop( "disabled", true );
     } else {
-        $('#pass_nonmatch').html('');
+        $('#display_error').html('');
         $('#register-button').prop( "disabled", false);
     }
 });
