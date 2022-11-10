@@ -12,7 +12,6 @@
 	<title>Login | Invoicey</title>
 </head>
 
-
 <?php
 
 if(isset($_POST['login'])){
