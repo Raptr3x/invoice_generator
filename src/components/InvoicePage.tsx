@@ -476,7 +476,6 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             pdfMode={pdfMode}
           />
         </View>
-        <p>Made with <a href="https://www.wdev-solutions.com">WDEV Solutions</a></p>
       </Page>
     </Document>
   )

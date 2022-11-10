@@ -4,7 +4,8 @@ import compose from '../styles/compose'
 
 interface Props {
   className?: string
-  pdfMode?: boolean
+  pdfMode?: boolean,
+  children?: any
 }
 
 const Page: FC<Props> = ({ className, pdfMode, children }) => {

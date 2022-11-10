@@ -5,6 +5,7 @@ import compose from '../styles/compose'
 interface Props {
   className?: string
   pdfMode?: boolean
+  children?: any
 }
 
 const View: FC<Props> = ({ className, pdfMode, children }) => {

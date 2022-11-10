@@ -1,6 +1,7 @@
 import React from 'react'
 import InvoicePage from './components/InvoicePage'
 import { Invoice } from './data/types'
+import Navigation from './components/Navigation'
 
 function App() {
 	const savedInvoice = window.localStorage.getItem('invoiceData')
@@ -20,6 +21,7 @@ function App() {
 
 	return (
 		<div className="app">
+			<Navigation />
 			<h1 className="center fs-30">React Invoice Generator</h1>
 			<InvoicePage data={data} onChange={onInvoiceUpdated} />
 		</div>

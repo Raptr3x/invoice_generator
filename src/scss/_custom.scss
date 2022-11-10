@@ -1,0 +1,25 @@
+nav{
+    margin-bottom: 4em;
+
+    ul{
+        display: flex;
+        flex-direction: row;
+
+        justify-content: space-between;
+        align-items: center;
+
+        list-style: none;
+
+        font-weight: 600;
+        font-size: larger;
+        
+        .active, li:hover{
+            color: #53e3a6;
+            cursor: pointer;
+        }
+
+        a{    
+            text-decoration: none;
+        }
+    }
+}
