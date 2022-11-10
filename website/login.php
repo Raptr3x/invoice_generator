@@ -99,9 +99,9 @@ if(isset($_POST['login'])){
 
 			<p class="incorrect hidden">Incorrect email/password!</p>
 			<form action="index.php" method="post" class="form">
-				<input name="email" type="text" placeholder="E-mail">
-				<input name="pass" type="password" placeholder="Password">
-				<input type="submit" name="login" id="login-button" value="Login"></input>
+				<input class="placeholder-white" name="email" type="text" placeholder="E-mail">
+				<input class="placeholder-white" name="pass" type="password" placeholder="Password">
+				<input class="placeholder-white" type="submit" name="login" id="login-button" value="Login"></input>
 				<!-- <div class="d-flex mt-2">
 					<input class="checkbox me-2 mb-0" type="checkbox" id="logged-in" name="logged-in">
 					<label class="text-start" for="logged-in">Stay logged in</label>

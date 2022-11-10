@@ -96,10 +96,10 @@ if(isset($_POST['register'])){
 			<h1 class="welcome hidden text-white">Account successfully registered!</h1>
 			<p id="display_error"></p>
 			<form class="form align-self-center" action="register.php" method="post">
-				<input name="uname" type="name" placeholder="Name" required>
-				<input name="email" type="email" placeholder="E-mail" required>
-				<input name="password" id="password" type="password" placeholder="Password" required>
-				<input name="repassword" id="repassword" type="password" placeholder="Repeat your password" required>
+				<input class="placeholder-white" name="uname" type="name" placeholder="Name" required>
+				<input class="placeholder-white" name="email" type="email" placeholder="E-mail" required>
+				<input class="placeholder-white" name="password" id="password" type="password" placeholder="Password" required>
+				<input class="placeholder-white" name="repassword" id="repassword" type="password" placeholder="Repeat your password" required>
 				
 				<div style="display: flex;">
 					<input class="checkbox" type="checkbox" id="newsletter" name="newsletter">
