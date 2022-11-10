@@ -84,7 +84,7 @@ if(isset($_POST['register'])){
           </ul>
           <a href="register.php">
           <button id="navAction" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-          Start today!
+          Register today!
           </button></a>
         </div>
       </div>
