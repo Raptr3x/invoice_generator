@@ -56,7 +56,7 @@ if(isset($_POST['login'])){
 	<nav id="header" class="fixed w-full z-30 top-0 text-white">
       <div class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div class="pl-4 flex items-center" style="width: 250px;">
-          <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+          <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/">
             <img id="logo-img" src="assets/logo_white.png">
           </a>
         </div>
@@ -74,13 +74,7 @@ if(isset($_POST['login'])){
               <a class="inline-block py-2 px-4 text-white font-bold no-underline" href="/">Home</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Templates</a>
-            </li>
-            <li class="mr-3">
-              <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#pricingSection">Pricing</a>
-            </li>
-            <li class="mr-3">
-              <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="login.php">Login</a>
+              <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#about">About</a>
             </li>
           </ul>
           <a href="register.php">

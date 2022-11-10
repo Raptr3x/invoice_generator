@@ -55,7 +55,7 @@ if(isset($_POST['register'])){
 	<nav id="header" class="fixed w-full z-30 top-0 text-white">
       <div class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div class="pl-4 flex items-center" style="width: 250px;">
-          <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+          <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/">
             <img id="logo-img" src="assets/logo_white.png">
           </a>
         </div>
@@ -73,19 +73,12 @@ if(isset($_POST['register'])){
               <a class="inline-block py-2 px-4 text-white font-bold no-underline" href="/">Home</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Templates</a>
-            </li>
-            <li class="mr-3">
-              <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#pricingSection">Pricing</a>
+              <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#about">About</a>
             </li>
             <li class="mr-3">
               <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="login.php">Login</a>
             </li>
           </ul>
-          <a href="register.php">
-          <button id="navAction" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-          Register today!
-          </button></a>
         </div>
       </div>
       <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
