@@ -1,4 +1,6 @@
 
+const debug=1;
+
 async function getTemplate() {
     const response = await fetch("invoice_templates/default.html")
     const text = await response.text()
@@ -7,7 +9,10 @@ async function getTemplate() {
     const editable_tags = ["li", "h1", "h2", "h3", "h4", "h5", "h6", "p", "th", "td", "span"];
 
     for(i in editable_tags){
-        $(editable_tags[i]).attr('contenteditable', 'true');
+        const tag = editable_tags[i];
+        if(!$(tag).hasClass("uneditable")){
+            $(tag).attr('contenteditable', 'true');
+        }
     }
 }
 
@@ -30,5 +35,28 @@ window.onload = function () {
             html2pdf().from(invoice).set(opt).save();
     })
 
+}
 
+
+// block inspect element
+if(debug===0){
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.onkeydown = function (e) {
+        if (event.keyCode == 123) {
+            alert("This action was recorded and will be reported.");
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            alert("This action was recorded and will be reported.");
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            alert("This action was recorded and will be reported.");
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            alert("This action was recorded and will be reported.");
+            return false;
+        }
+    }
 }

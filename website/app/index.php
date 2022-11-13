@@ -17,7 +17,6 @@
             <div class="col-md-12 text-right mb-3">
                 <button class="btn btn-primary" id="download"> download pdf</button>
             </div>
-            <!-- Insert template here -->
         </div>
     </div>
     <script src="../jquery.js"></script>
