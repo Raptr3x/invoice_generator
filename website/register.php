@@ -13,7 +13,7 @@
 <?php
 if(isset($_POST['register'])){
 
-	include_once('database.php');
+	include_once('./src/database.php');
 
 	$conn = get_connection();
 	$uname = filter_var($_POST['uname'], FILTER_SANITIZE_STRING);
@@ -34,7 +34,7 @@ if(isset($_POST['register'])){
 					$('.wrapper').addClass('form-success');
 
 					setTimeout(function() {
-						window.location.href = 'index.php';
+						window.location.href = 'app/index.html';
 					}, 2000);
 				})
 			</script>

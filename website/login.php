@@ -16,7 +16,7 @@
 
 if(isset($_POST['login'])){
 
-	include_once('database.php');
+	include_once('./src/database.php');
 
 	$conn = get_connection();
 
@@ -36,7 +36,7 @@ if(isset($_POST['login'])){
 				$('.wrapper').addClass('form-success');
 
 				setTimeout(function() {
-					window.location.href = 'react-invoice-generator/index.html';
+					window.location.href = 'app/index.html';
 				}, 2000);
 			})
 		</script>
@@ -91,7 +91,7 @@ if(isset($_POST['login'])){
 			<h1 class="welcome hidden fw-bolder text-white">Welcome!</h1>
 
 			<p class="incorrect hidden">Incorrect email/password!</p>
-			<form action="index.php" method="post" class="form">
+			<form action="login.php" method="post" class="form">
 				<input class="placeholder-white" name="email" type="text" placeholder="E-mail">
 				<input class="placeholder-white" name="pass" type="password" placeholder="Password">
 				<input class="placeholder-white" type="submit" name="login" id="login-button" value="Login"></input>
