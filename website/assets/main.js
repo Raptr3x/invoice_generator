@@ -1,4 +1,4 @@
-const debug=1;
+const debug=0;
 
 $('#password, #repassword').on('keyup', function () {
     if ($('#password').val() != $('#repassword').val()) {
@@ -10,7 +10,7 @@ $('#password, #repassword').on('keyup', function () {
     }
 });
 
-window.addEventListener('load', (event) => {
+$(window).on('load', (event) => {
   var scrollpos = window.scrollY;
   var header = document.getElementById("header");
   var navcontent = document.getElementById("nav-content");
@@ -61,7 +61,6 @@ window.addEventListener('load', (event) => {
 
       header.classList.remove("shadow");
       navcontent.classList.remove("bg-white");
-      navcontent.classList.add("bg-gray-100");
     }
   });
 
@@ -123,4 +122,22 @@ if(debug===0){
           return false;
       }
   }
+}
+
+
+// ako filename login.php ili register.php, ukloni container i bg-white klasu
+var page = window.location.pathname.split("/").pop();
+
+if(!page || page==="index.php"){
+    $('#home').addClass('font-bold')
+}
+if(page==="login.php" || page==="register.php"){
+    // $('#rm-container').removeClass('container');
+    $('#nav-content').removeClass('bg-white');
+}
+
+if(page==="login.php"){
+    $('#login').hide();
+}else if(page==="register.php"){
+    $('#register').hide();
 }

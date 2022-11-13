@@ -1,5 +1,5 @@
 
-const debug=1;
+const debug=0;
 
 async function getTemplate() {
     const response = await fetch("invoice_templates/default.html")
@@ -34,8 +34,8 @@ window.onload = function () {
 
             html2pdf().from(invoice).set(opt).save();
     })
-
 }
+
 
 
 // block inspect element
