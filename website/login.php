@@ -13,6 +13,8 @@
 
 <?php
 
+session_start();
+
 if(isset($_POST['login'])){
 
 	include_once('./src/database.php');

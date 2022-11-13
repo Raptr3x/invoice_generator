@@ -1,24 +1,28 @@
 
-const debug=0;
+const debug=1;
 
 async function getTemplate() {
-    const response = await fetch("invoice_templates/default.html")
+    
+
+    let path = "invoice_templates/"+$('#select_template').val();
+    const response = await fetch(path);
     const text = await response.text()
-    $("#invoice_parent").append(text)
+
+    $("#invoice").empty();
+    $("#invoice").append(text);
+    $("#invoice").addClass("card");
 
     const editable_tags = ["li", "h1", "h2", "h3", "h4", "h5", "h6", "p", "th", "td", "span"];
 
     for(i in editable_tags){
         const tag = editable_tags[i];
         if(!$(tag).hasClass("uneditable")){
-            $(tag).attr('contenteditable', 'true');
+            $('#invoice').find(tag).attr('contenteditable', 'true');
         }
     }
 }
 
 window.onload = function () {
-
-    getTemplate()
 
     $("#download").on("click", () => {
             const invoice = this.document.getElementById("invoice");
@@ -26,7 +30,7 @@ window.onload = function () {
             console.log(window);
             var opt = {
                 margin: 1,
-                filename: 'myfile.pdf',
+                filename: $('#filename').val(),
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
@@ -36,7 +40,9 @@ window.onload = function () {
     })
 }
 
-
+$('#select_template').on('change', function(){
+    getTemplate();
+});
 
 // block inspect element
 if(debug===0){

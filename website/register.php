@@ -12,6 +12,8 @@
 <?php
 if(isset($_POST['register'])){
 
+	session_start();
+
 	include_once('./src/database.php');
 
 	$conn = get_connection();

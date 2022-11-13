@@ -1,4 +1,4 @@
-const debug=0;
+const debug=1;
 
 $('#password, #repassword').on('keyup', function () {
     if ($('#password').val() != $('#repassword').val()) {
